@@ -1,6 +1,7 @@
 const { log } = require('console')
 const fs = require('fs')
 
+const args = process.argv.slice(2)
 
 // 内存初始化
 const memory = []
@@ -11,7 +12,8 @@ for (let i = 0; i < 100; i++) {
 let pointer = 0
 
 // 读取程序
-let str = fs.readFileSync("./c.x", 'utf-8')
+let str = fs.readFileSync(args[0], 'utf-8')
+
 
 // 维护一个函数表
 let funs = []
@@ -83,6 +85,7 @@ for (let i = 0; i < codeArr.length; i++) {
             break
 
         case "add":
+            data = (data === undefined || data === null) ? 1 : data
             memory[pointer] += data
             break;
         case "sub":
