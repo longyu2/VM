@@ -1,0 +1,43 @@
+push 5
+
+start
+sub 1
+right
+add 1
+left
+
+end
+start
+sub 1
+right
+add 1
+left
+
+end
+start
+sub 1
+right
+add 1
+left
+
+end
+start
+sub 1
+right
+add 1
+left
+
+end
+start
+sub 1
+right
+add 1
+left
+
+end
+start
+
+// 此处不明白将一个数复制至其右边需要那么复杂的操作，原来这一段只能移动，未能复制，所以先codex中先移动至又两格，再删除自身往左边两个均复制达到效果
+
+
+
