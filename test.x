@@ -1,9 +1,8 @@
 import tool.x
 
-push 500
+push 100
 right
-push 1000
+push 100
 left
 
 run mul
-

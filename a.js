@@ -45,8 +45,11 @@ const Run = (codeStr) => {
             operand = parseInt(commandArr[1])
         }
         else {
-            operand = (commandArr[1])
+            operand = commandArr[1]
         }
+
+
+
 
         // console.log(`进入指令 ${command}`);
 
@@ -64,7 +67,7 @@ const Run = (codeStr) => {
                 console.log(operand)
             case "start":
                 // 判断程序是否为0，为零则跳到下一个 end处， 不为零则直接往后走
-                if (memory[pointer] === 0) {
+                if (memory[pointer] <= 0) {
                     // 往后查询第一个end
                     let temp = ""
                     while (temp != "end") {
@@ -127,16 +130,11 @@ const Run = (codeStr) => {
 
                 break;
             case "run":
-                // 调用函数
-                // runLine = i
-                console.log(operand);
                 const fun = funs.find((fun) => fun.name === operand);
-                console.log();
                 Run(fun.funData.join("\n"))
                 break;
             case "funEnd":
-                // 函数调用结束，回到调用点
-                // i = runLine
+
                 break
             case "import":
                 // 导入其他代码文件
@@ -168,7 +166,7 @@ Run(codeStr)
 console.log("指针位置：", pointer);
 
 console.log(
-    "内存", memory);
+    "内存", memory.slice(0,10));
 
 
 
