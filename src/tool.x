@@ -4,28 +4,29 @@
 // 将一个数移动到其右边l格
 
 fun moveR
--------------------------------
-start 
-add -1
-right
-add 1
-left
-end
----------------------------------------
-funEnd
+{
+    start 
+    add -1
+    right
+    add 1
+    left
+    end
+}
+    
+
 
 
 // 将一个数移动到其右边l格
 fun moveR2
 -------------------------------
-start 
-add -1
-right
-right
-add 1
-left
-left
-end
+    start 
+    add -1
+    right
+    right
+    add 1
+    left
+    left
+    end
 ---------------------------------------
 funEnd
 
@@ -34,14 +35,14 @@ funEnd
 
 fun moveL2
 -------------------------------
-start 
-add -1
-left
-left
-add 1
-right
-right
-end
+    start 
+    add -1
+    left
+    left
+    add 1
+    right
+    right
+    end
 ---------------------------------------
 funEnd
 
@@ -51,35 +52,35 @@ funEnd
 // 将一个数复制到右边，自身不变
 fun copyR 
 ---------------------------------------
-// 这一段将一个数复制到其右边两格并删除自身，然后将第三格移动到自身
-// 这里必须写0不然有值的话会污染copyR
-right 
-push 0 
-right
-push 0
-left
-left
+    // 这一段将一个数复制到其右边两格并删除自身，然后将第三格移动到自身
+    // 这里必须写0不然有值的话会污染copyR
+    right 
+    push 0 
+    right
+    push 0
+    left
+    left
 
 
-start 
-add -1
-right
-add 1
-right
-add 1
+    start 
+    add -1
+    right
+    add 1
+    right
+    add 1
 
-left
-left
-end
+    left
+    left
+    end
 
-// 这一段将第三格移动到第一格
-right
-right
+    // 这一段将第三格移动到第一格
+    right
+    right
 
-moveL2()
+    moveL2()
 
-left
-left
+    left
+    left
 
 funEnd
 ---------------------------------------
@@ -91,24 +92,23 @@ funEnd
 
 fun AddR
 ---------------------------------------
-// 将当前指针所指的数据与右侧相加，结果写入当前区域
-right
-copyR()
-right
+    // 将当前指针所指的数据与右侧相加，结果写入当前区域
+    right
+    copyR()
+    right
 
-start
+    start
 
-add -1
-left
-left
-add 1
-right
-right
-end
+    add -1
+    left
+    left
+    add 1
+    right
+    right
+    end
 
-left
-left
-
+    left
+    left
 funEnd
 ---------------------------------------
 
@@ -117,41 +117,66 @@ funEnd
 fun mul
 ----
 
-// 将指针值和右边一值相乘,到自己保存，指针不变
-add -1
+    // 将指针值和右边一值相乘,到自己保存，指针不变
+    add -1
 
-right
-
-
-run copyR
-
-left
-
-start
+    right
 
 
-right
-run AddR
-left
-add -1
-end
+    run copyR
 
-left
+    left
+
+    start
 
 
-----
+    right
+    run AddR
+    left
+    add -1
+    end
+
+    left
+
+
+    ----
 funEnd
 
 
 fun RX
 
-start
+    start
 
-add -1
-copyR()
-push 0
-right
+    add -1
+    copyR()
+    push 0
+    right
 
-end
+    end
 
 funEnd
+
+
+
+function add10 {
+    
+    right
+    push 10
+    left
+
+
+    right
+    
+    start
+
+    left
+    AddR()
+
+    right 
+    add -1
+
+
+    end
+
+
+}
