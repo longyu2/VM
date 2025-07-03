@@ -1,9 +1,0 @@
-import tool.x
-
-push 500
-right
-push 1000
-left
-
-run mul
-
