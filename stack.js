@@ -22,8 +22,7 @@ while (arr.length > 0) {
         }
     }
 
-    console.log(arr);
-    console.log(result);
+
 }
 
 

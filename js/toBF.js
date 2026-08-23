@@ -45,6 +45,13 @@ const ToBrainFuck = (codeStr) => {
     }
 
     fs.writeFileSync("brainfuck.bf", brainFuckStr, "utf8")
+    return brainFuckStr
 }
+
+const str=fs.readFileSync("./src/存储程序.bf1","utf8")
+
+
+ToBrainFuck(str)
+
 
 export {ToBrainFuck}

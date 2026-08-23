@@ -1,4 +1,0 @@
-
-import ./src/tool.x
-
-add10()

@@ -2,12 +2,15 @@
 import fs from 'fs';
 import {Run} from "./js/Run.js"
 let args = process.argv.slice(2)
+import util from 'util'
+import {printMemTable} from "./js/tools.js"
+import { ToBrainFuck } from './js/toBF.js';
 
 
 // 内存初始
 
 const memory = []
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 100000; i++) {
     memory.push(0)
 }
 
@@ -24,11 +27,16 @@ let  global= {
     codeStr:codeStr,
     memory:memory
 }
-Run(global)
+let output = Run(global)
 
 
 
 
+printMemTable(global)
+// console.log(output);
+
+
+// console.log(ToBrainFuck(output));
 
 
 

@@ -1,0 +1,4 @@
+import ./src/tool.bf1
+
+push 5
+moveR()
